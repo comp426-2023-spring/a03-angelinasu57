@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import rpslsGame from "../lib/rpsls.js";
+import { rpslsGame } from "../lib/rpsls.js";
 import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2)); // processing arguments
