@@ -6,7 +6,7 @@ import minimist from "minimist";
 const args = minimist(process.argv.slice(2)); // processing arguments
 
 
-if ("h" in args || "help" in args) {
+if ("h" in args || "help" in args) { // if you see a h or help
     console.log(
         `
         Usage: node-rpsls [SHOT]
@@ -23,7 +23,7 @@ if ("h" in args || "help" in args) {
     process.exit(0);
 }
 
-if ("r" in args || "rules" in args) {
+if ("r" in args || "rules" in args) { // if you see an r or rules
     console.log(
         `
         Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
@@ -42,7 +42,7 @@ if ("r" in args || "rules" in args) {
     process.exit(0);
 }
 
-if (args._.length > 1) {
+if (args._.length > 1) { // testing length
     console.error("Arguments out of range.");
     console.log(
         `
@@ -69,8 +69,8 @@ if (args._.length > 1) {
         `
     );
     process.exit(0);
-} else if (args._.length === 0) {
-        console.log(JSON.stringify(rpsls.rpslsDefault()));
+} else if (args._.length === 0) { // if length is 0
+        console.log(JSON.stringify(rpsls.rpslsDefault())); // go to default
     } else {
         let playerChoice = args._[0].toLowerCase();
 
