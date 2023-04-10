@@ -1,4 +1,5 @@
-// runs node-rpsls
+#!/usr/bin/env node
+
 import rpsls from "../lib/rpsls.js";
 import minimist from "minimist";
 
