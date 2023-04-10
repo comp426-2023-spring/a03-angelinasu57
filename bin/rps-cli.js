@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import rpsls from "../lib/rpsls.js";
+import rpsGame from "../lib/rpsls.js";
 import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2)); // processing arguments
@@ -55,13 +55,13 @@ if (args._.length > 1) { // check if in range
     );
     process.exit(0);
 } else if (args._.length === 0) { // if length is 0
-    console.log(JSON.stringify(rpsls.rpsDefault()));
+    console.log(JSON.stringify(rpsGame()));
 }
 
 else {
     let playerChoice = args._[0].toLowerCase();
-    if (rpsls.rpsChoices.includes(playerChoice)) {
-        console.log(JSON.stringify(rpsls.rps(playerChoice)));
+    if (rpsChoices.includes(playerChoice)) {
+        console.log(JSON.stringify(rpsGame(playerChoice)));
     }
     else {
         console.error(
