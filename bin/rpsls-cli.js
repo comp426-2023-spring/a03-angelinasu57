@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { rpslsGame } from "../lib/rpsls.js";
 import minimist from "minimist";
+import { rpslsGame } from "../lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2)); // processing arguments
 
@@ -42,65 +42,7 @@ if ("r" in args || "rules" in args) { // if you see an r or rules
     process.exit(0);
 }
 
-// if (args._.length > 1) { // testing length
-//     console.error("Arguments out of range.");
-//     console.log(
-//         `
-//         Usage: node-rpsls [SHOT]
-//         Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
-//             -h, --help        display this help message and exit
-//             -r, --rules       display the rules and exit
-//         Examples:
-//             node-rpsls        Return JSON with single player RPSLS result.
-//                             e.g. {"player":"rock"}
-//             node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
-//                             e.g {"player":"rock","opponent":"Spock","result":"lose"}
-//         Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
-//         - Scissors CUTS Paper
-//         - Paper COVERS Rock
-//         - Rock SMOOSHES Lizard
-//         - Lizard POISONS Spock
-//         - Spock SMASHES Scissors
-//         - Scissors DECAPITATES Lizard
-//         - Lizard EATS Paper
-//         - Paper DISPROVES Spock
-//         - Spock VAPORIZES Rock
-//         - Rock CRUSHES Scissors                    
-//         `
-//     );
-//     process.exit(0);
 
-// } else if (args._.length === 0) { // if length is 0
-//         console.log(JSON.stringify(rpsls())); // go to default
-//     } else {
-//         let playerChoice = args._[0].toLowerCase();
-
-//         if (rpslsChoices.includes(playerChoice)) {
-//             console.log(JSON.stringify(rpslsGame(playerChoice)));
-//         } else {
-//             console.error(
-//                 `
-//                 Invalid argument.
-//                 Acceptable arguments: rock | paper | scissors | lizard | spock
-//                 `
-//             );
-//             console.log(
-//                 `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
-//                 - Scissors CUTS Paper
-//                 - Paper COVERS Rock
-//                 - Rock SMOOSHES Lizard
-//                 - Lizard POISONS Spock
-//                 - Spock SMASHES Scissors
-//                 - Scissors DECAPITATES Lizard
-//                 - Lizard EATS Paper
-//                 - Paper DISPROVES Spock
-//                 - Spock VAPORIZES Rock
-//                 - Rock CRUSHES Scissors                    
-//                 `
-//             );        
-//         }
-//     }
-
-let playerChoice = args._[0].toLowerCase();
+var playerChoice = args._[0];
 console.log(JSON.stringify(rpslsGame(playerChoice)));
 process.exit(0);

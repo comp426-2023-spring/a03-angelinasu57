@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { rpsGame } from "../lib/rpsls.js";
 import minimist from "minimist";
+import { rpsGame } from "../lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2)); // processing arguments
 
@@ -34,6 +34,6 @@ if ("r" in args || "rules" in args) { // if arg is r or rules
     process.exit(0);
 }
 
-let playerChoice = args._[0].toLowerCase();
+var playerChoice = args._[0];
 console.log(JSON.stringify(rpsGame(playerChoice)));
 process.exit(0);
