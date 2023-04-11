@@ -34,6 +34,6 @@ if ("r" in args || "rules" in args) { // if arg is r or rules
     process.exit(0);
 }
 
-var playerChoice = args._[0];
-console.log(JSON.stringify(rpsGame(playerChoice)));
-process.exit(0);
+var playerChoice = args._[0]; // player choice = the argument given
+console.log(JSON.stringify(rpsGame(playerChoice))); // put player choice in the rps function
+process.exit(0); // exit successfully
